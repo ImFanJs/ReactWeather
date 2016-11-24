@@ -20,10 +20,10 @@ export default class WeatherForm extends React.Component {
 
   render () {
     return (
-      <div className='form-group'>
+      <div className='medium-6'>
         <form onSubmit={this.onFormSubmit.bind(this)}>
           <input type='text' ref='location' placeholder='Enter city name' className='form-control'/><br/>
-          <button className='btn btn-block btn-primary'>Get Weather</button>
+          <button className='button hollow'>Get Weather</button>
         </form>
       </div>
     )
