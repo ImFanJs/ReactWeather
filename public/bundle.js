@@ -26698,9 +26698,18 @@
 	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(
-	        'h2',
+	        'div',
 	        null,
-	        'About Component'
+	        _react2.default.createElement(
+	          'h2',
+	          null,
+	          'About'
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'Welcome to the About Page'
+	        )
 	      );
 	    }
 	  }]);
@@ -26747,9 +26756,18 @@
 	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(
-	        'h2',
+	        'div',
 	        null,
-	        'Examples Component'
+	        _react2.default.createElement(
+	          'h2',
+	          null,
+	          'Examples'
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'Welcome to the Examples Page'
+	        )
 	      );
 	    }
 	  }]);
