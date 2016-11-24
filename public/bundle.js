@@ -24928,30 +24928,83 @@
 	  }
 
 	  _createClass(Nav, [{
+	    key: 'onSearch',
+	    value: function onSearch(e) {
+	      e.preventDefault();
+
+	      alert('TO-DO');
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'div',
-	        null,
+	        { className: 'top-bar' },
 	        _react2.default.createElement(
-	          'h2',
-	          null,
-	          'Nav Component'
+	          'div',
+	          { className: 'top-bar-left' },
+	          _react2.default.createElement(
+	            'ul',
+	            { className: 'menu' },
+	            _react2.default.createElement(
+	              'li',
+	              { className: 'menu-text' },
+	              'Jesco Weather'
+	            ),
+	            _react2.default.createElement(
+	              'li',
+	              null,
+	              _react2.default.createElement(
+	                _reactRouter.IndexLink,
+	                { to: '/', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
+	                'Get Weather'
+	              )
+	            ),
+	            _react2.default.createElement(
+	              'li',
+	              null,
+	              _react2.default.createElement(
+	                _reactRouter.Link,
+	                { to: '/about', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
+	                'About'
+	              )
+	            ),
+	            _react2.default.createElement(
+	              'li',
+	              null,
+	              _react2.default.createElement(
+	                _reactRouter.Link,
+	                { to: '/examples', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
+	                'Examples'
+	              )
+	            )
+	          )
 	        ),
 	        _react2.default.createElement(
-	          _reactRouter.IndexLink,
-	          { to: '/', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
-	          'Get Weather'
-	        ),
-	        _react2.default.createElement(
-	          _reactRouter.Link,
-	          { to: '/about', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
-	          'About'
-	        ),
-	        _react2.default.createElement(
-	          _reactRouter.Link,
-	          { to: '/examples', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
-	          'Examples'
+	          'div',
+	          { className: 'top-bar-right' },
+	          _react2.default.createElement(
+	            'form',
+	            { onSubmit: this.onSearch },
+	            _react2.default.createElement(
+	              'ul',
+	              { className: 'menu' },
+	              _react2.default.createElement(
+	                'li',
+	                null,
+	                _react2.default.createElement('input', { type: 'search', placeholder: 'Search weather' })
+	              ),
+	              _react2.default.createElement(
+	                'li',
+	                null,
+	                _react2.default.createElement(
+	                  'button',
+	                  { type: 'submit', className: 'button' },
+	                  'Get weather'
+	                )
+	              )
+	            )
+	          )
 	        )
 	      );
 	    }
@@ -25043,7 +25096,7 @@
 	        if (isLoading) {
 	          return _react2.default.createElement(
 	            'h3',
-	            null,
+	            { className: 'text-centered' },
 	            'Fetching weather...'
 	          );
 	        } else if (temp && location) {
@@ -25052,7 +25105,7 @@
 	      }
 	      return _react2.default.createElement(
 	        'div',
-	        { className: 'col-md-4 col-md-offset-4 text-center' },
+	        { className: 'small-4 medium-6 text-centered' },
 	        _react2.default.createElement(
 	          'h2',
 	          null,
@@ -25122,7 +25175,7 @@
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'div',
-	        { className: 'form-group' },
+	        { className: 'medium-6' },
 	        _react2.default.createElement(
 	          'form',
 	          { onSubmit: this.onFormSubmit.bind(this) },
@@ -25130,7 +25183,7 @@
 	          _react2.default.createElement('br', null),
 	          _react2.default.createElement(
 	            'button',
-	            { className: 'btn btn-block btn-primary' },
+	            { className: 'button hollow' },
 	            'Get Weather'
 	          )
 	        )
