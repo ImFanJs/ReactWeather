@@ -24878,11 +24878,14 @@
 	        null,
 	        _react2.default.createElement(_Nav2.default, null),
 	        _react2.default.createElement(
-	          'h2',
-	          null,
-	          'Main Component'
-	        ),
-	        this.props.children
+	          'div',
+	          { className: 'row' },
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'columns medium-6 large-4 small-centered' },
+	            this.props.children
+	          )
+	        )
 	      );
 	    }
 	  }]);
@@ -25096,7 +25099,7 @@
 	        if (isLoading) {
 	          return _react2.default.createElement(
 	            'h3',
-	            { className: 'text-centered' },
+	            { className: 'text-center' },
 	            'Fetching weather...'
 	          );
 	        } else if (temp && location) {
@@ -25105,10 +25108,10 @@
 	      }
 	      return _react2.default.createElement(
 	        'div',
-	        { className: 'small-4 medium-6 text-centered' },
+	        null,
 	        _react2.default.createElement(
 	          'h2',
-	          null,
+	          { className: 'text-center' },
 	          'Get Weather'
 	        ),
 	        _react2.default.createElement(_WeatherForm2.default, { onSearch: this.handleSearch.bind(this) }),
@@ -25175,15 +25178,15 @@
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'div',
-	        { className: 'medium-6' },
+	        null,
 	        _react2.default.createElement(
 	          'form',
 	          { onSubmit: this.onFormSubmit.bind(this) },
-	          _react2.default.createElement('input', { type: 'text', ref: 'location', placeholder: 'Enter city name', className: 'form-control' }),
+	          _react2.default.createElement('input', { type: 'text', ref: 'location', placeholder: 'Enter city name' }),
 	          _react2.default.createElement('br', null),
 	          _react2.default.createElement(
 	            'button',
-	            { className: 'button hollow' },
+	            { className: 'button expanded hollow' },
 	            'Get Weather'
 	          )
 	        )
@@ -25241,14 +25244,14 @@
 	        null,
 	        _react2.default.createElement(
 	          'h2',
-	          null,
+	          { className: 'text-center' },
 	          'It`s it ',
 	          temp,
 	          '\xBAC in ',
 	          location,
 	          '!'
 	        ),
-	        _react2.default.createElement('p', { className: 'message' })
+	        _react2.default.createElement('p', { className: 'message text-center' })
 	      );
 	    }
 	  }]);
@@ -26847,6 +26850,8 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _reactRouter = __webpack_require__(166);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -26871,14 +26876,36 @@
 	        'div',
 	        null,
 	        _react2.default.createElement(
-	          'h2',
+	          'h1',
 	          null,
 	          'Examples'
 	        ),
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Welcome to the Examples Page'
+	          'Here are few example locations to try out:'
+	        ),
+	        _react2.default.createElement(
+	          'ol',
+	          null,
+	          _react2.default.createElement(
+	            'li',
+	            null,
+	            _react2.default.createElement(
+	              _reactRouter.Link,
+	              { to: '/?location=Mexico' },
+	              'Mexico City, MX'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'li',
+	            null,
+	            _react2.default.createElement(
+	              _reactRouter.Link,
+	              { to: '/?location=Monterrey' },
+	              'Monterrey, MX'
+	            )
+	          )
 	        )
 	      );
 	    }
