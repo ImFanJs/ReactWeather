@@ -14,7 +14,7 @@ export default class WeatherForm extends React.Component {
       this.props.onSearch(location)
       der[0].innerHTML = ''
     } else {
-      der[0].innerHTML = 'Debes introducir una ciudad valida!'
+      der[0].innerHTML = 'You should write a valid city!'
     }
   }
 

@@ -25170,7 +25170,7 @@
 	        this.props.onSearch(location);
 	        der[0].innerHTML = '';
 	      } else {
-	        der[0].innerHTML = 'Debes introducir una ciudad valida!';
+	        der[0].innerHTML = 'You should write a valid city!';
 	      }
 	    }
 	  }, {
@@ -25243,7 +25243,7 @@
 	        'div',
 	        null,
 	        _react2.default.createElement(
-	          'h2',
+	          'h3',
 	          { className: 'text-center' },
 	          'It`s it ',
 	          temp,
@@ -26816,14 +26816,43 @@
 	        'div',
 	        null,
 	        _react2.default.createElement(
-	          'h2',
+	          'h1',
 	          null,
 	          'About'
 	        ),
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          'Welcome to the About Page'
+	          'This is a weather application build on React.'
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'Here are some of the tools I used:'
+	        ),
+	        _react2.default.createElement(
+	          'ul',
+	          null,
+	          _react2.default.createElement(
+	            'li',
+	            null,
+	            _react2.default.createElement(
+	              'a',
+	              { href: 'https://www.facebook.github.io/react' },
+	              'React'
+	            ),
+	            ' - This was the Javascript Library used.'
+	          ),
+	          _react2.default.createElement(
+	            'li',
+	            null,
+	            _react2.default.createElement(
+	              'a',
+	              { href: 'http://openweathermap.org' },
+	              'Open Weather Map'
+	            ),
+	            ' - I used Open Weather Map API to search for weather data by city name.'
+	          )
 	        )
 	      );
 	    }
