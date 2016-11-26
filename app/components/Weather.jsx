@@ -45,7 +45,7 @@ export default class Weather extends React.Component {
     }
     return (
       <div>
-        <h2 className='text-center'>Get Weather</h2>
+        <h1 className='text-center page-title'>Get Weather</h1>
         <WeatherForm onSearch={this.handleSearch.bind(this)}/>
         {renderMessage()}
         {renderError()}

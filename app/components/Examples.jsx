@@ -5,7 +5,7 @@ export default class Examples extends React.Component {
   render () {
     return (
       <div>
-        <h1>Examples</h1>
+        <h1 className='page-title'>Examples</h1>
         <p>Here are few example locations to try out:</p>
         <ol>
           <li>
