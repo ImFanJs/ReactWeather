@@ -9,7 +9,6 @@ export default class WeatherMessage extends React.Component {
     return (
       <div>
         <h3 className='text-center'>It`s it {temp}ºC in {location}!</h3>
-        <p className='message text-center'></p>
       </div>
     )
   }

@@ -8,13 +8,9 @@ export default class WeatherForm extends React.Component {
     e.preventDefault()
 
     var location = this.refs.location.value
-    var der = document.getElementsByClassName('message')
-    if (location.length > 2) {
+    if (location.length > 0) {
       this.refs.location.value = ''
       this.props.onSearch(location)
-      der[0].innerHTML = ''
-    } else {
-      der[0].innerHTML = 'You should write a valid city!'
     }
   }
 
