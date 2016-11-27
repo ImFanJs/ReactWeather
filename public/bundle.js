@@ -24927,10 +24927,10 @@
 	var Nav = function (_React$Component) {
 	  _inherits(Nav, _React$Component);
 
-	  function Nav() {
+	  function Nav(props) {
 	    _classCallCheck(this, Nav);
 
-	    return _possibleConstructorReturn(this, (Nav.__proto__ || Object.getPrototypeOf(Nav)).apply(this, arguments));
+	    return _possibleConstructorReturn(this, (Nav.__proto__ || Object.getPrototypeOf(Nav)).call(this, props));
 	  }
 
 	  _createClass(Nav, [{
@@ -24938,7 +24938,12 @@
 	    value: function onSearch(e) {
 	      e.preventDefault();
 
-	      alert('TO-DO');
+	      var location = this.refs.search.value;
+	      var encodedLocation = encodeURIComponent(location);
+	      if (location.length > 0) {
+	        this.refs.search.value = '';
+	        window.location.hash = '#/?location=' + encodedLocation;
+	      }
 	    }
 	  }, {
 	    key: 'render',
@@ -24991,14 +24996,14 @@
 	          { className: 'top-bar-right' },
 	          _react2.default.createElement(
 	            'form',
-	            { onSubmit: this.onSearch },
+	            { onSubmit: this.onSearch.bind(this) },
 	            _react2.default.createElement(
 	              'ul',
 	              { className: 'menu' },
 	              _react2.default.createElement(
 	                'li',
 	                null,
-	                _react2.default.createElement('input', { type: 'search', placeholder: 'Search weather by city' })
+	                _react2.default.createElement('input', { type: 'search', placeholder: 'Search weather by city', ref: 'search' })
 	              ),
 	              _react2.default.createElement(
 	                'li',
@@ -25082,7 +25087,9 @@
 
 	      this.setState({
 	        isLoading: true,
-	        errorMessage: undefined
+	        errorMessage: undefined,
+	        location: undefined,
+	        temp: undefined
 	      });
 	      (0, _OpenWeatherMap2.default)(location).then(function (temp) {
 	        _this2.setState({
@@ -25096,6 +25103,26 @@
 	          errorMessage: e.message
 	        });
 	      });
+	    }
+	  }, {
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      var location = this.props.location.query.location;
+
+	      if (location && location.length > 0) {
+	        this.handleSearch(location);
+	        window.location.hash = '#/';
+	      }
+	    }
+	  }, {
+	    key: 'componentWillReceiveProps',
+	    value: function componentWillReceiveProps(newProps) {
+	      var location = newProps.location.query.location;
+
+	      if (location && location.length > 0) {
+	        this.handleSearch(location);
+	        window.location.hash = '#/';
+	      }
 	    }
 	  }, {
 	    key: 'render',
@@ -25258,7 +25285,7 @@
 	        _react2.default.createElement(
 	          'h3',
 	          { className: 'text-center' },
-	          'It`s it ',
+	          'It`s ',
 	          temp,
 	          '\xBAC in ',
 	          location,

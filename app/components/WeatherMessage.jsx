@@ -8,7 +8,7 @@ export default class WeatherMessage extends React.Component {
     var {temp, location} = this.props
     return (
       <div>
-        <h3 className='text-center'>It`s it {temp}ºC in {location}!</h3>
+        <h3 className='text-center'>It`s {temp}ºC in {location}!</h3>
       </div>
     )
   }
