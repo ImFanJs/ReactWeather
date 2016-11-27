@@ -1,4 +1,6 @@
 import React from 'react'
+import ReactDOM from 'react-dom'
+import ReactDOMServer from 'react-dom/server'
 
 export default class ErrorModal extends React.Component {
   constructor (props) {
@@ -14,16 +16,24 @@ export default class ErrorModal extends React.Component {
     message: React.PropTypes.string.isRequired
   }
   componentDidMount () {
-    let modal = new Foundation.Reveal($('#modal-error'))
-    modal.open()
-  }
-  render () {
     var {title, message} = this.props
-    return (
+    var modalMarkup = (
       <div id='modal-error' className='reveal tiny text-center' data-reveal=''>
         <h4>{title}</h4>
         <p>{message}</p>
         <button className='button hollow' data-close=''>Okay</button>
+      </div>
+    )
+
+    var $modal = $(ReactDOMServer.renderToString(modalMarkup))
+    $(ReactDOM.findDOMNode(this)).html($modal)
+
+    let modal = new Foundation.Reveal($('#modal-error'))
+    modal.open()
+  }
+  render () {
+    return (
+      <div>
       </div>
     )
   }
